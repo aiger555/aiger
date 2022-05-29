@@ -17,3 +17,8 @@ $ docker run -p 9090:8080 spring-boot-docker.jar
 3)docker ps
 4)docker stop 820
 5)docker rm 820(container name)
+
+*application.properties
+1.spring.datasource.platform=postgres
+2.spring.datasource.username=some-postgres
+3.spring.datasource.password=mysecretpassword
