@@ -22,3 +22,15 @@ $ docker run -p 9090:8080 spring-boot-docker.jar
 1.spring.datasource.platform=postgres
 2.spring.datasource.username=some-postgres
 3.spring.datasource.password=mysecretpassword
+
+Maven -> mvn package
+
+sudo docker build -t springboot-docker-demo:latest .
+sudo docker images
+sudo docker run -p 8081:8080 springboot-docker-demo
+
+FROM openjdk:18
+LABEL maintainer="javaguides.net"
+ADD target/student-management-system-0.0.1-SNAPSHOT.jar springboot-docker-demo.jar
+#how this application is going to run in a docker container
+ENTRYPOINT ["java", "-jar", "springboot-docker-demo.jar"]
